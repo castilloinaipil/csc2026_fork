@@ -1,4 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/catch_approx.hpp>
 
 #include "TrackReconstructor.hpp"
 
@@ -18,6 +19,6 @@ TEST_CASE("TrackReconstructor returns one track when hits are present") {
 
     REQUIRE(tracks.size() == 1);
     REQUIRE(tracks[0].hits.size() == 1);
-    REQUIRE(tracks[0].hits[0].energy == Approx(4.0));
+    REQUIRE(tracks[0].hits[0].energy == Catch::Approx(4.0));
 }
 
